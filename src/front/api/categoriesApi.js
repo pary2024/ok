@@ -1,12 +1,12 @@
 import api from "./axiosClient";
 
 const categoryApi = {
-  getAllCategory: () => api.get("/cotagory"),
-  getCategoryById: (id) => api.get(`/cotagory/${id}`),
-  createCategory: (data) => api.post("/cotagory", data),
-  updateCategory: (id, data) => api.post(`/cotagory/${id}`, data),
-  deleteCategory: (id) => api.delete(`/cotagory/${id}`),
-  searchCategory: (query) => api.get(`/cotagory/search?q=${query}`),
+  getAllCategory: () => api.get("/category"),
+  getCategoryById: (id) => api.get(`/category/${id}`),
+  createCategory: (data) => api.post("/category", data),
+  updateCategory: (id, data) => api.post(`/category/${id}`, data),
+  deleteCategory: (id) => api.delete(`/category/${id}`),
+  searchCategory: (query) => api.get(`/category/search?q=${query}`),
 };
 
 export default categoryApi;

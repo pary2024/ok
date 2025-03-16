@@ -10,6 +10,7 @@ import Contage2 from "../pages/details/Contage2";
 import Image2 from "../pages/details/Image2";
 import Home from "../pages/home/Home";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Login/Register";
 
 const AppRoute = () => {
   return (
@@ -24,7 +25,8 @@ const AppRoute = () => {
         <Route path="/cotage1" element={<Contage1 />} />
         <Route path="/cotage2" element={<Contage2 />} />
         <Route path="/image2" element={<Image2 />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </BrowserRouter>
   )
