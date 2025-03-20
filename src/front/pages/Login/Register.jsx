@@ -54,7 +54,8 @@ const Register = () => {
               className="mr-2"
               onChange={(e) => setIsChecked(e.target.checked)}
             />
-            <span className="text-gray-600 text-sm">I agree to the terms and conditions</span>
+            <span className="text-gray-600 text-sm">I agree to the terms and conditions</span> 
+             <a href="/login" className=' text-sm text-red-500'><span>return</span></a>
           </div>
           <button 
             type="submit" 

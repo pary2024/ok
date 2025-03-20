@@ -11,25 +11,29 @@ import Image2 from "../pages/details/Image2";
 import Home from "../pages/home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
+import MasterFront from "../layout/MasterFront";
 
-const AppRoute = () => {
+const FrontRoute = () => {
   return (
-    <BrowserRouter>
+    
       <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/info1" element={<Info1 />} />
-        <Route path="/info2" element={<Info2 />} />
-        <Route path="/info3" element={<Info3 />} />
-        <Route path="/image1" element={<Image1 />} />
-        <Route path="/cotage1" element={<Contage1 />} />
-        <Route path="/cotage2" element={<Contage2 />} />
-        <Route path="/image2" element={<Image2 />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/" element ={<MasterFront/>}>
+
+              <Route path="*" element={<NotFound />} />
+              <Route index  element={<Home />} />
+              <Route path="/info1" element={<Info1 />} />
+              <Route path="/info2" element={<Info2 />} />
+              <Route path="/info3" element={<Info3 />} />
+              <Route path="/image1" element={<Image1 />} />
+              <Route path="/cotage1" element={<Contage1 />} />
+              <Route path="/cotage2" element={<Contage2 />} />
+              <Route path="/image2" element={<Image2 />} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/register" element={<Register/>}/>
+        </Route>
       </Routes>
-    </BrowserRouter>
+   
   )
 };
 
-export default AppRoute;
+export default FrontRoute;
