@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import Info1 from "../pages/details/Info1";
 import Info2 from "../pages/details/Info2";
@@ -15,25 +15,28 @@ import MasterFront from "../layout/MasterFront";
 
 const FrontRoute = () => {
   return (
-    
-      <Routes>
-        <Route path="/" element ={<MasterFront/>}>
+    <Routes>
+      {/* MasterFront acts as the main layout for the frontend */}
+      <Route element={<MasterFront />}>
+        {/* Main Routes */}
+        <Route index element={<Home />} />
+        <Route path="/info1" element={<Info1 />} />
+        <Route path="/info2" element={<Info2 />} />
+        <Route path="/info3" element={<Info3 />} />
+        <Route path="/image1" element={<Image1 />} />
+        <Route path="/cotage1" element={<Contage1 />} />
+        <Route path="/cotage2" element={<Contage2 />} />
+        <Route path="/image2" element={<Image2 />} />
+        
+        {/* Authentication Routes */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
 
-              <Route path="*" element={<NotFound />} />
-              <Route index  element={<Home />} />
-              <Route path="/info1" element={<Info1 />} />
-              <Route path="/info2" element={<Info2 />} />
-              <Route path="/info3" element={<Info3 />} />
-              <Route path="/image1" element={<Image1 />} />
-              <Route path="/cotage1" element={<Contage1 />} />
-              <Route path="/cotage2" element={<Contage2 />} />
-              <Route path="/image2" element={<Image2 />} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/register" element={<Register/>}/>
-        </Route>
-      </Routes>
-   
-  )
+        {/* 404 Route */}
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default FrontRoute;

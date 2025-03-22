@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import category from "../../../services/category";
 
 const ListCategory = () => {
-  const [categories, setCategories] = useState([
-    { id: 1, name: "Technology", userId: 101, status: "active" },
-    { id: 2, name: "Health", userId: 102, status: "inactive" },
-    { id: 3, name: "Education", userId: 103, status: "active" },
-  ]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    category.getAllCategory()
+      .then((response) => {
+        setCategories(response.data);
+      })
+      .catch((error) => console.error("Error fetching categories:", error));
+  }, []);
 
   const handleDelete = (id) => {
-    setCategories(categories.filter((category) => category.id !== id));
-  };
-
-  const handleUpdate = (id) => {
-    alert(`Update category with ID: ${id}`);
+    category.deleteCategory(id)
+      .then(() => {
+        setCategories(categories.filter((category) => category.id !== id));
+      })
+      .catch((error) => console.error("Error deleting category:", error));
   };
 
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Category List</h2>
-      <a href="/admin/add/category" className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">add category</a>
+      <a href="/admin/add/category" className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Add Category</a>
       <table className="w-full border-collapse border border-gray-300 mt-10">
         <thead>
           <tr className="bg-gray-100">
@@ -43,7 +48,7 @@ const ListCategory = () => {
                 {category.status}
               </td>
               <td className="border border-gray-300 p-2 space-x-2">
-                <a href="/admin/edit/category" className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Edite</a>
+                <a href={`/admin/edit/category/${category.id}`} className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Edit</a>
                 <button
                   onClick={() => handleDelete(category.id)}
                   className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
