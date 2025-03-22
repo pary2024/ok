@@ -24,9 +24,9 @@ const TypeList = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className=" mb-4 flex items-center justify-between">
-        <h2 className="text-2xl font-semibold">Type List</h2>
+    <div className="container mx-auto p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500">
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-2xl font-semibold text-white">Type List</h2>
         <a href="/admin/type/create" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
           Add Type
         </a>
@@ -57,7 +57,10 @@ const TypeList = () => {
                   <a href='/admin/type/edit' className="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 mr-2">
                     Edit
                   </a>
-                  <button className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">
+                  <button
+                    className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 active:bg-red-700 transition-all"
+                    onClick={() => {}}
+                  >
                     Delete
                   </button>
                 </td>
@@ -76,7 +79,7 @@ const TypeList = () => {
         >
           Prev
         </button>
-        <span className="mx-2 text-lg">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="mx-2 text-lg text-white">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 disabled:opacity-50"

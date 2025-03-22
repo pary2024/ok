@@ -6,7 +6,7 @@ const useNews = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  useEffect(() =>{
     const fetchNews = async () => {
       try {
         const response = await newsApi.getAllNews();

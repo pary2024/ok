@@ -12,6 +12,9 @@ import UserEdit from "../pages/User/Edit/UserEdit";
 import TypeList from "../pages/type/List/TypeList";
 import TypeCreate from "../pages/type/Create/TypeCreate";
 import TypeEdit from "../pages/type/Edit/TypeEdit";
+import AddCategory from "../pages/category/add/AddCategory";
+import ListCategory from "../pages/category/ListCategory/Listca";
+import EditCategory from "../pages/category/editecategory/EditeCateg";
 
 
 const BackRoute = () => {
@@ -22,7 +25,7 @@ const BackRoute = () => {
 
 
            <Route index element={<Dashboard />} />
-           <Route path="/category" element={<Category />} />
+           
 
            <Route path="/news/list" element={<List/>}/>
            <Route path="/news/create" element={<Create/>}/>
@@ -36,6 +39,14 @@ const BackRoute = () => {
            <Route path="/type/list" element={<TypeList/>}/>
            <Route path="/type/create" element={<TypeCreate/>}/>
            <Route path="/type/edit" element={<TypeEdit/>}/>
+
+           <Route path="/category" element={<Category />} />
+           
+           <Route path="/add/category" element={<AddCategory/>}/>
+           <Route path="/list/category" element={<ListCategory/>}/>
+           <Route path="/edit/category" element={<EditCategory />} />
+
+
 
 
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Create = () => {
   return (
-    <div className="flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="flex items-center justify-center bg-gradient-to-r from-blue-400 via-pink-500 to-purple-600 dark:bg-gradient-to-r dark:from-blue-800 dark:via-pink-700 dark:to-purple-800">
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md w-full">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-900 dark:text-white">
           New Create

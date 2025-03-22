@@ -4,7 +4,7 @@ const UserCreate = () => {
  
 
   return (
-    <div className=" mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4">Create User</h2>
       <form >
         <div className="mb-4">

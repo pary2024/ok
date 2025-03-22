@@ -28,9 +28,9 @@ const UserList = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 bg-gradient-to-r from-blue-500 via-green-500 to-purple-500">
       <div>
-        <h2 className="text-2xl font-semibold mb-4">User List</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-white">User List</h2>
         <a href="/admin/user/create" className="text-blue-500 hover:text-blue-700 mb-4 inline-block">
           Add New User
         </a>
@@ -84,7 +84,7 @@ const UserList = () => {
         >
           Previous
         </button>
-        <span className="mx-4 text-lg">{currentPage} / {totalPages}</span>
+        <span className="mx-4 text-lg text-white">{currentPage} / {totalPages}</span>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           className="px-4 py-2 bg-gray-300 text-black rounded-md hover:bg-gray-400 disabled:opacity-50"

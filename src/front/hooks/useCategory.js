@@ -9,7 +9,7 @@ const useCategory = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await categoryApi.getAllCategories();
+        const response = await categoryApi.getAllCategory();
         setCategories(response.data);
       } catch (err) {
         setError(err);
